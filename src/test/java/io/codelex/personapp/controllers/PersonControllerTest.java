@@ -44,7 +44,7 @@ class PersonControllerTest {
     }
 
     private MockHttpServletRequestBuilder putRequestBuilder(Person person) throws JsonProcessingException {
-        return put("/api/v1/person/", person)
+        return put("/api/v1/person", person)
                 .content(jsonObjectMapper.writeValueAsString(person))
                 .contentType(MediaType.APPLICATION_JSON);
     }
