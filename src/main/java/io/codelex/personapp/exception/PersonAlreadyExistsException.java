@@ -1,4 +1,4 @@
-package io.codelex.personapp.Exceptions;
+package io.codelex.personapp.exception;
 
 public class PersonAlreadyExistsException extends RuntimeException {
     public PersonAlreadyExistsException() {

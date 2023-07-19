@@ -1,4 +1,4 @@
-package io.codelex.personapp.Exceptions;
+package io.codelex.personapp.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
