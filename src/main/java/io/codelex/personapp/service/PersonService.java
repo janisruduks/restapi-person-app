@@ -1,6 +1,6 @@
-package io.codelex.personapp.services;
+package io.codelex.personapp.service;
 
-import io.codelex.personapp.Exceptions.PersonAlreadyExistsException;
+import io.codelex.personapp.exception.PersonAlreadyExistsException;
 import io.codelex.personapp.entity.Person;
 import io.codelex.personapp.repository.PersonRepository;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +14,7 @@ import java.util.List;
 public class PersonService {
 
     private final PersonRepository repository;
-    private static final Logger LOGGER = LogManager.getLogger(Service.class);
+    private static final Logger LOGGER = LogManager.getLogger(PersonService.class);
 
     public PersonService(PersonRepository repository) {
         this.repository = repository;
@@ -22,15 +22,15 @@ public class PersonService {
 
     public Person addPerson(Person person) {
         if (repository.existsByPersonalId(person.getPersonalId())) {
-            LOGGER.warn(person + " person already exists!");
+            LOGGER.info(person + " person already exists!");
             throw new PersonAlreadyExistsException();
         }
-        LOGGER.warn("Saving person " + person);
+        LOGGER.info("Saving person " + person);
         return repository.save(person);
     }
 
     public List<Person> getAllPersonsByPersonalIdOrBirthDate(String personalId, LocalDate birthDate) {
-        LOGGER.warn("Querying for person with data,");
+        LOGGER.info("Querying for person with data,");
         return repository.findAllByPersonalIdOrBirthDate(personalId, birthDate);
     }
 }

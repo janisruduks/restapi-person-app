@@ -3,6 +3,7 @@ package io.codelex.personapp.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.codelex.personapp.controller.PersonController;
 import io.codelex.personapp.entity.Gender;
 import io.codelex.personapp.entity.Person;
 import jakarta.transaction.Transactional;

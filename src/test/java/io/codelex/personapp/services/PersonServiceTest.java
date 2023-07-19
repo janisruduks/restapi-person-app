@@ -1,9 +1,10 @@
 package io.codelex.personapp.services;
 
-import io.codelex.personapp.Exceptions.PersonAlreadyExistsException;
+import io.codelex.personapp.exception.PersonAlreadyExistsException;
 import io.codelex.personapp.entity.Gender;
 import io.codelex.personapp.entity.Person;
 import io.codelex.personapp.repository.PersonRepository;
+import io.codelex.personapp.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
