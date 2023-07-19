@@ -1,7 +1,7 @@
-package io.codelex.personapp.controllers;
+package io.codelex.personapp.controller;
 
 import io.codelex.personapp.entity.Person;
-import io.codelex.personapp.services.PersonService;
+import io.codelex.personapp.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +25,6 @@ public class PersonController {
     }
 
     @GetMapping("/search")
-    @ResponseStatus(HttpStatus.OK)
     public List<Person> matchPersonByPersonalIdAndBirthDate(
             @RequestParam(required = false) String personalId, LocalDate birthDate
     ) {
